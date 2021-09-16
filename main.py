@@ -34,12 +34,7 @@ while run:
     snake.move()
     snake.check_for_food(food)
 
-    if snake.check_for_food(food) == True:
-        scoreTextOne = font.render('Score: ', True, (255, 255, 255))
-        scoreTextTwo = snake.score
-        scoreTextFinal = scoreTextOne + scoreTextTwo
-        window.blit(scoreTextFinal, (20, 120))
-        pygame.display.update()
+    
 
     if snake.check_bounds() == True or snake.check_tail_collision() == True:
         text = font.render('Game Over', True, (255, 255, 255))
@@ -48,8 +43,12 @@ while run:
         pygame.time.delay(1000)
         snake.respawn()
         food.respawn()
+        snake.score = 0
 
     window.fill((0, 0, 0))
     snake.draw(pygame, window)
     food.draw(pygame, window)
+    scoreFont = pygame.font.SysFont('comicsans', 20, True)
+    scoreText = scoreFont.render(f'Score: {snake.score}', True, (255, 255, 255))
+    window.blit(scoreText, (10, 275))
     pygame.display.update()
