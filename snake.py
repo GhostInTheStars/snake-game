@@ -13,7 +13,7 @@ class Snake:
     direction = None
     body = None
     block_size = None
-    color = (39, 204, 163)
+    color = (0, 255, 242)
     bounds = None
     score = 0
 
