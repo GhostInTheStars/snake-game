@@ -7,13 +7,16 @@ class Direction(Enum):
     LEFT = 2
     RIGHT = 3
 
+r = 255
+g = 255
+b = 255
 
 class Snake:
     length = None
     direction = None
     body = None
     block_size = None
-    color = (0, 255, 242)
+    color = (r, g, b)
     bounds = None
     score = 0
 
@@ -68,6 +71,7 @@ class Snake:
     def check_for_food(self, food):
         head = self.body[-1]
         if head[0] == food.x and head[1] == food.y:
+            self.color = food.color
             self.eat()
             food.respawn()
             self.score += 1
