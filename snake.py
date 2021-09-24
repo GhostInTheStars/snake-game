@@ -16,7 +16,7 @@ class Snake:
     direction = None
     body = None
     block_size = None
-    color = (r, g, b)
+    color = [r, g, b]
     bounds = None
     score = 0
 
@@ -71,7 +71,10 @@ class Snake:
     def check_for_food(self, food):
         head = self.body[-1]
         if head[0] == food.x and head[1] == food.y:
-            self.color = food.color
+            #self.color = (food.color[0], food.color[1], food.color[2])
+            self.color[0] = food.color[0]
+            self.color[1] = food.color[1]
+            self.color[2] = food.color[2]
             self.eat()
             food.respawn()
             self.score += 1

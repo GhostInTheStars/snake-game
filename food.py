@@ -8,7 +8,7 @@ class Food:
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
-    color = (r, g, b)
+    color = [r, g, b]
     bounds = None
 
     def __init__(self, block_size, bounds):
@@ -23,7 +23,7 @@ class Food:
         r = random.randint(0, 255)
         g = random.randint(0, 255)
         b = random.randint(0, 255)
-        self.color = (r, g, b)
+        self.color = [r, g, b]
         blocks_in_x = (self.bounds[0]) / self.block_size
         blocks_in_y = (self.bounds[1]) / self.block_size
         self.x = random.randint(0, blocks_in_x - 1) * self.block_size

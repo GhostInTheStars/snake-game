@@ -44,7 +44,7 @@ while run:
         snake.respawn()
         food.respawn()
         snake.score = 0
-        snake.color = (255, 255, 255)
+        snake.color = [255, 255, 255]
 
     window.fill((0, 0, 0))
     snake.draw(pygame, window)
